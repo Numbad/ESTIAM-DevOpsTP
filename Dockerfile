@@ -22,5 +22,3 @@ ADD package.json ./
 RUN npm install 
 
 ADD . /app/
-
-CMD find /var/lib/mysql -type f -exec touch {} \;&& /etc/init.d/mysql start / && mysql -u root -e "CREATE DATABASE tp_db;USE tp_db;CREATE TABLE indexCpt (id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,cpt INT )" && node index.js
